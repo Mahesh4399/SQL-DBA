@@ -1,0 +1,104 @@
+create database mahe
+
+use mahe
+
+CREATE TABLE emp (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Gender CHAR(1),
+    DateOfBirth DATE,
+    Department VARCHAR(50),
+    Position VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+-- Inserting sample data
+INSERT INTO emp VALUES
+(1, 'John', 'Doe', 'M', '1990-05-15', 'IT', 'Software Engineer', 75000.00),
+(2, 'Jane', 'Smith', 'F', '1988-12-10', 'HR', 'HR Manager', 90000.00),
+(3, 'Mike', 'Johnson', 'M', '1995-08-22', 'Finance', 'Accountant', 65000.00),
+(4, 'Emily', 'Williams', 'F', '1992-03-18', 'IT', 'System Analyst', 80000.00),
+(5, 'Robert', 'Brown', 'M', '1994-07-05', 'Marketing', 'Marketing Manager', 95000.00),
+(6, 'Laura', 'Miller', 'F', '1991-09-30', 'Finance', 'Financial Analyst', 70000.00),
+(7, 'Daniel', 'Taylor', 'M', '1989-11-25', 'HR', 'HR Specialist', 85000.00),
+(8, 'Olivia', 'Anderson', 'F', '1993-06-12', 'IT', 'Database Administrator', 78000.00),
+(9, 'William', 'Harris', 'M', '1996-02-28', 'Marketing', 'Product Manager', 92000.00),
+(10, 'Sophia', 'Thomas', 'F', '1997-04-15', 'Finance', 'Senior Accountant', 72000.00);
+
+CREATE TABLE prod (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Category VARCHAR(50),
+    Supplier VARCHAR(100),
+    Price DECIMAL(8, 2),
+    StockQuantity INT,
+    ManufactureDate DATE,
+    ExpiryDate DATE
+);
+
+-- Inserting sample data
+INSERT INTO prod VALUES
+(1, 'Laptop', 'Electronics', 'ABC Electronics', 1200.00, 50, '2022-01-10', '2025-01-10'),
+(2, 'Desk Chair', 'Furniture', 'XYZ Furniture', 150.00, 30, '2022-02-15', NULL),
+(3, 'Smartphone', 'Electronics', 'Tech World', 800.00, 100, '2022-03-20', '2024-03-20'),
+(4, 'Coffee Table', 'Furniture', 'Home Decors', 200.00, 25, '2022-04-05', NULL),
+(5, 'Digital Camera', 'Electronics', 'Photo World', 500.00, 40, '2022-05-12', '2024-05-12'),
+(6, 'Microwave Oven', 'Appliances', 'Kitchen Appliances Co.', 120.00, 15, '2022-06-18', NULL),
+(7, 'Running Shoes', 'Apparel', 'Sports Gear', 80.00, 60, '2022-07-22', NULL),
+(8, 'LED TV', 'Electronics', 'Tech Solutions', 1000.00, 20, '2022-08-30', '2025-08-30'),
+(9, 'Washing Machine', 'Appliances', 'Laundry Appliances', 350.00, 10, '2022-09-10', NULL),
+(10, 'Office Desk', 'Furniture', 'Office Furnishings', 300.00, 18, '2022-10-15', NULL);
+
+
+select * from emp
+
+select * from prod
+
+--Retrieve all columns for employees who work in the 'IT' department.
+select * from emp where department = 'IT';
+
+--List the distinct positions (job roles) in the 'emp' table.
+select distinct position from emp
+
+--Find the total number of employees in the 'emp' table.
+select distinct(count(EmployeeID)) from emp
+
+--Display the first names and salaries of employees whose salary is greater than 80000.
+select FirstName, salary from emp where salary > 80000;
+
+--Update the salary of the employee with EmployeeID 3 to 70000.
+update emp
+set salary = 70000
+where EmployeeID = 3
+
+select * from prod
+
+--Retrieve the names and prices of products in the 'Electronics' category.
+select productname,price from prod where category = 'Electronics';
+
+--Find the average price of all products in the 'prod' table.
+select avg(price) as avg_price from prod;
+
+--List the products with a stock quantity less than 30.
+select productname from prod where stockquantity < 30;
+
+Insert a new product into the 'prod' table with the following details:
+
+ProductID: 11
+ProductName: 'Bluetooth Speaker'
+Category: 'Electronics'
+Supplier: 'Tech Gadgets'
+Price: 50.00
+StockQuantity: 50
+ManufactureDate: '2022-11-01'
+ExpiryDate: NULL
+
+
+insert into prod
+values(
+11,'Bluetooth Speaker','Electronics','Tech Gadgets',50.00, 50, '2022-11-01', NULL)
+select * from prod
+
+--Delete the product with ProductID 5 from the 'prod' table.
+delete from prod where productID = 5;
