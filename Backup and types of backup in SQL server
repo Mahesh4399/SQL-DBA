@@ -1,0 +1,38 @@
+Backups and Types
+1.	Full backup
+2.	Log backup
+3.	Diffential backup
+4.	Split backup
+5.	Copy backup
+6.	Mirror backup
+7.	File and File group backup
+
+•	Full backup – All 3 recovery models (.Bak)
+o	GUI
+	This is manual process by right click and follow the steps.
+o	Scripting 
+	Backup database [database_name] to disk=’F:\SQL DBA\LOG_12022023_Full.bak’
+•	Log backup – Full and Bulk recovery model – Will take only ldf file backup (.Arn)
+o	GUI
+	This is manual process by right click and follow the steps
+o	Scripting
+	Backup log [database_name] to disk=’F:\SQL DBA\LOG_12022023_log_6:42AM.arn’
+•	Differential backup – All 3 recovery models will support (.diff)
+o	GUI
+	This is manual process by right click and follow the steps
+o	Scripting
+	Backup database [database_name] to disk=’F:\SQL DBA\LOG_12022023_diff.diff’ with differential
+
+•	Copy only backup – will not break the LSN number
+o	Backup database [database_name] to disk=’F:\SQL DBA\LOG_12022023_copyonly.bak’ with copy_only
+
+•	Mirror backup – takes additional copy of the backup
+o	backup database [database_name] to disk=’F:\SQL DBA\LOG_12022023_copyonly.bak’ mirror to disk= C:\SQL DBA\LOG_12022023_mirror.bak’ with format.
+	This will create a same copy of database in multiple locations with same data that you are taking the backup.
+
+•	File and file group backup – This is only for .mdf file group
+o	Backup database [database_name] Filegroup=’primary’ Filegroup=’secondary’ to disk=’F:\SQL DBA\filegroup_12022023_filegroup_primary_secondary.bak’
+	This command will take the backup of the primary and the secodary files from the database.
+•	Split backup – This will split the files
+o	backup database [database_name] to disk=’F:\SQL DBA\filegroup_12022023_split.bak’, ’C:\SQL DBA\filegroup_12022023_split_1.bak’, ’C:\SQL DBA\filegroup_12022023_split_2.bak’
+	This will split the data into different drives whereever u wanted to store those diff locations can we mentioned and then it can be stored in different locations.
