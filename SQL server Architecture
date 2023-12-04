@@ -1,0 +1,21 @@
+SQL server architectre
+•	Protocal layer -> Relational engine -> Storage engine
+
+•	Protocal layer
+ 	- Shared memory
+  	- TCP/IP, SNI (SQL Ntework interface)
+•	Relational engine
+-	Query parser, Query optimiser, Executor
+
+•	Storage engine
+ - Transactional manager <-> Access methods <-> Buffer manager (buffer manager - buffer pool, plan cache, dirty pages)
+•	Transactional manager -> T.log 
+-	Buffer manager -> data file
+
+•	T.log + Data file = Database 
+
+•	Datafile - .mdf (master data file)
+•	T.log - .ldf (log data file)
+
+We can create n number of .mdf and .ldf files but we only 1 .mdf file will be used and multiple .ldf files can we used
+
