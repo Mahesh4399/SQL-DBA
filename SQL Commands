@@ -1,0 +1,42 @@
+Commands
+•	sp_helpdb 
+o	This gives the information of the database.
+(name, size, owner, dbid, created, status, compitability level)
+•	sp_helpdb test  (test is the database name that has to be replaced)  - 
+o	This gives the information abut the database and the files information in that database.
+(name, field, file_name, file_group, size, maxsize, growth, usage,  ) 
+•	sp_readerrorlog 
+o	shows the errorlogs 
+o	This will show the login failure, backup and restoe infromation, job failure information, etc
+•	Sp_cycle_errorlog
+o	This will create a error log
+o	Whenever sql server is restarted errorlog will be created.
+•	sp_who 
+o	Provides the info about current_users, sessions and processes in an instance
+•	sp_who2 
+o	 Provides more informaton and more columns than sp_who.
+o	1-50 – default one 
+o	51 – From 51 whoch are present they are the users.
+•	Select * from sys.sysprocesses 
+o	This will provide what are the processes runnign in the server.
+o	Provides more informatio than sp_who.
+•	Select * from sys.sysprocesses where blocked>0 
+o	This will give the details of blocking
+•	Restore verifyonly from disk=’F:\SQL DBA\LOG.bak’ 
+o	This gives the backup is successful or no
+•	Restore headeronly from disk=’F:\SQL DBA\LOG.bak’
+o	This gives the detailed information about the backup.
+•	Restore filelistonly from disk=’ ’F:\SQL DBA\LOG.bak’
+o	This gives the information about the files of data files and log files of the backup.
+•	sp_who active  
+o	Gives the information more detailed set of information than older tools such as sp_who and sp_who2.
+•	Use db
+dbcc loginfo 
+o	(db – databse name) – this code gives us the count of the VLF files
+(Always the vls file count has to be less than 50 and if it is more than 50 then performance issues may cause)
+•	backup database db to disk=’F:\SQL DBA\LOG.bak’ with compression
+o	 (db – databse name shld change)This command is use to take backup of the database.
+•	backup log db to disk=’F:\SQL DBA\LOG.bak’ with compression
+o	 (db – change ur database name) – This command is used to backup the log files from that database.
+•	Sp_helpdb db – (db – database name)
+o	 this is used to check the recovery model of a database.
