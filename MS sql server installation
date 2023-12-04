@@ -1,0 +1,74 @@
+MS sql server installation 
+Edition
+ - Developer (test, stage)
+ - enter the product key (prod)
+
+License terms
+ - accept
+
+Global rules
+
+Microsoft updates
+
+Install setup files (This will scan all the below steps)
+ - scan for product updates
+ - Download setup files
+ - Extract setup files
+ - Install setup files
+(once the scan is done this will show the rules)
+
+Install Rules (frewall rule will be failed)
+ - Machine learning server shared feature report
+ - Consistency validation for SQL server register keys
+ - computer domain controller 
+ - Windows Firewall
+ - Microsoft .Net Framework 4.7.2, or never, is required
+ - Internet explorer
+ - 2 GB ram, 4 GB hard disk
+
+Azure extension for sql server
+ - Azure etension for sql server (untick this)
+
+Feature Selection
+ - Instant Features
+	- Database engine services
+		- SQL server replication
+		- Machine learning services and language extensions
+		- Full-text and semantic extractions for search
+		- Data quality services
+		- Polybase Query service for external data
+	- Analysis services
+ - Shared features
+ 	- Data quality client
+ 	- Integration services
+		- Scale out master 
+		- Scale out worker
+	- Master data services
+ - Redistributable features
+(Instance root directory will be selected default in instant features step)
+
+Instance Configuration
+ - Named Instance (server/instance name that u wanted to give can give here)
+(we can create 50 instances/servers in which 1 is default and 49 can be done manually)
+
+Server Configuration(here u can see the services, account_name, password and startup type)(every service has to be in sutomatic)
+(the below are just the services)
+		- SQL server agent
+		- SQL server database engine
+		- SQL server integration service 16.0
+		- SQL server browser
+(If working in real time then u will be given with the account name and the password so u can use that but general installation do not require and the startup type has to be in the automatic)
+ - Grant(tick the box)
+
+Database engine configuration
+ - Windows authenticate mode (we dont ues this)
+ - Mixed mode (SQL server and windows authentication)
+ - Give the password of ur own and confirm
+ - Add the user(for now u have to add ur user and later the team has to be added as per requirement)
+Ready to install (this step is like summary which shows all ur configuration)
+
+
+
+summary.txt - Once installation is done to recheck the details of the server 
+ 	    - This file will be located in setupbotstrap folder
+	    - This file will be named as summary date and time . txt
