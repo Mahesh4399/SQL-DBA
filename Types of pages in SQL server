@@ -1,0 +1,12 @@
+Types of pages
+
+
+Index page (indexes)
+IAM (Indexes allocation map -indexes information will be stored)
+Data page (data will be stored)
+BCM (Bulk change map - Bulk data - Bulk log recovery model info)
+DCM (Differential change map - modification done from last backup to till now)
+GAM (Global allocation map - if extents are uniform then this - size is 4 GB - 1 extent is 64kb - 8 pages is 1 extent)
+SGAM (shared global allocation map - mixed extents are high then this is used - opp to GAM)
+Page free space(8kb) - if the space avaliability is free in the page then that get stored in this
+Text or Image page - Text or image type of data wil be stored in this page 
