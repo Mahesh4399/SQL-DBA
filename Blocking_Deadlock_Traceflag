@@ -1,0 +1,29 @@
+Blocking
+One process of the resource is locked by the another resource process.
+
+To check the block 
+- sp_who2
+- ⁠select * from sys.sysprocess where blocked > 0
+- ⁠sys.dm.exec.requests
+- ⁠sys.dm.exec.sessions
+- dbcc inputbuffer(57) -(this is used to check the complete details of that session) 
+
+Things that we need to check first if there is blocking
+⁠
+Session id
+Query
+User
+Hostname
+
+
+Deadlocks
+- When two process are trying to apply lock on each other mutually then deadlock will occur.
+
+If u want to track deadlock u need to trace 1222 & 1204.
+
+Traced flag - It is used to change the certain behaviour of the server.
+
+- dbcc tracestatus - this command will show the trace flag enabled details.
+- dbcc traceon(1222) - this command will apply the trace flag to 1222 
+- ⁠(the above command traceon will only be applied to that session) 
+- ⁠xp_errorlog - here u can find the deadlock information.
