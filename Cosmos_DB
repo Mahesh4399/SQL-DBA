@@ -4,20 +4,49 @@ It is a fully managed database service.
 It stores data as a document data.
 It is an open standard for data.
 It stores data as a key value pair.
+=======================================================================================================================================
+Key features of Azure Cosmos db
 
-Key features
-- Global distribution 
-- ⁠Regional presence - Avaloable in 54+ regions 
-- ⁠Always on - availability for reads and writes
-- ⁠Elastic scale 
-- ⁠Low latency guarantee 
-- ⁠Consistency options
-- ⁠No schema or index management 
-- ⁠Multiple APIs
- - SQL
- - Cassandra 
- - MongoDB
- - Azure table storage
+Multi-Model Database:
+Supports multiple data models, including document, key-value, graph, column-family, and table.
+Allows developers to choose the most suitable data model for their application.
+
+Global Distribution:
+Enables data to be distributed across multiple Azure regions globally.
+Provides low-latency data access for users regardless of their geographic location.
+
+Multi-API Support:
+Offers multiple APIs, including SQL (document), MongoDB, Cassandra, Gremlin (graph), and Azure Table Storage.
+Allows developers to use their preferred API and data model.
+
+Automatic and Instantaneous Scaling:
+Scales both throughput and storage automatically based on demand.
+Supports manual scaling for fine-grained control over resources.
+
+Consistency Models:
+Provides multiple consistency models, including strong, bounded staleness, session, and eventual consistency.
+Allows developers to choose the level of consistency based on their application's requirements.
+
+Serverless Option:
+Offers a serverless option (Azure Cosmos DB serverless) where you pay only for the resources consumed by the database operations.
+Suitable for occasional, unpredictable workloads.
+
+Security and Compliance:
+Implements built-in security features such as encryption at rest, Azure AD-based authentication, and virtual network service endpoints.
+Compliant with various industry standards and regulations.
+
+Monitoring and Analytics:
+Provides detailed monitoring and analytics through Azure Monitor and Azure Log Analytics.
+Enables real-time insights into the performance and usage of Cosmos DB.
+
+Global Distribution and Replication:
+Supports configurable consistency and automatic multi-region data replication.
+Ensures data availability and fault tolerance.
+
+Integrated Development Tools:
+Integrates with various development tools, including Azure Portal, Visual Studio, and Azure CLI.
+Offers SDKs for popular programming languages.
+=======================================================================================================================
 
 CosmosDB structure 
 
