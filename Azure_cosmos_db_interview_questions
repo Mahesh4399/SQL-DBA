@@ -1,0 +1,100 @@
+What is Azure Cosmos DB, and how does it differ from traditional relational databases?
+Azure Cosmos DB is a globally distributed, multi-model database service designed for modern applications.
+It differs by offering automatic scaling, multi-region distribution, and support for various data models compared to traditional relational databases.
+=========================================================================================================================================================================
+
+Explain the multi-model capabilities of Azure Cosmos DB.
+Azure Cosmos DB supports multiple data models, including document, key-value, graph, column-family, and table,
+allowing developers to choose the most suitable model for their application.
+=========================================================================================================================================================================
+
+How does global distribution work in Azure Cosmos DB, and what are its benefits?
+Global distribution in Azure Cosmos DB enables data replication across multiple Azure regions, providing low-latency 
+access and fault tolerance, enhancing application performance and availability.
+=========================================================================================================================================================================
+
+Can you describe the various consistency models available in Azure Cosmos DB and when you might use each one?
+Azure Cosmos DB offers strong, bounded staleness, session, and eventual consistency models. Selection depends on factors 
+like the application's data consistency requirements, with strong consistency for critical transactions and eventual consistency for read-heavy workloads.
+=========================================================================================================================================================================
+
+What are the key differences between SQL (DocumentDB) API, MongoDB API, Gremlin API, and Table API in Azure Cosmos DB?
+Each API in Azure Cosmos DB supports different data models and query languages. For example, SQL API for document data, 
+MongoDB API for MongoDB-compatible data, Gremlin API for graph data, and Table API for Azure Table Storage compatibility.
+=========================================================================================================================================================================
+
+How does automatic and instantaneous scaling work in Azure Cosmos DB, and when might you choose manual scaling instead?
+Azure Cosmos DB automatically scales resources based on demand, allowing instantaneous adjustments to throughput and storage. 
+Manual scaling provides fine-grained control for specific requirements or predictable workloads.
+=========================================================================================================================================================================
+
+Explain the concept of partitioning in Azure Cosmos DB and its significance.
+Partitioning in Azure Cosmos DB involves distributing data across multiple physical partitions to achieve scalability. 
+It's significant for efficient data distribution and parallel processing, ensuring optimal performance.
+=========================================================================================================================================================================
+
+What is the purpose of the Azure Cosmos DB emulator, and how can it be useful in the development and testing process?
+The Azure Cosmos DB emulator is a local development environment that mimics the Azure Cosmos DB service. It's useful for developing and testing applications without incurring Azure costs, providing a simulated Cosmos DB environment.
+=========================================================================================================================================================================
+
+What are the security features available in Azure Cosmos DB to protect data?
+Azure Cosmos DB supports features like encryption at rest, Azure AD-based authentication, Virtual Network Service Endpoints, 
+and compliance with various industry standards to ensure data security.
+=========================================================================================================================================================================
+
+Can you compare and contrast Azure Cosmos DB serverless and provisioned throughput options?
+Serverless in Azure Cosmos DB allows on-demand resource consumption, while provisioned throughput involves pre-allocated resources.
+Serverless is suitable for sporadic workloads, while provisioned throughput provides dedicated resources for consistent performance.
+=========================================================================================================================================================================
+
+How does Azure Cosmos DB handle data consistency during network partitions or failures?
+Azure Cosmos DB uses configurable consistency models and automatic multi-region data replication to handle network 
+partitions or failures, ensuring data consistency and availability.
+=========================================================================================================================================================================
+
+Explain the importance of indexing in Azure Cosmos DB and how it impacts query performance.
+Indexing in Azure Cosmos DB accelerates query performance by facilitating efficient data retrieval. However, improper 
+indexing can lead to increased storage usage, emphasizing the need for strategic index management.
+=========================================================================================================================================================================
+
+What are the common use cases for Azure Cosmos DB, and when would you recommend its adoption over other databases?
+Azure Cosmos DB is suitable for web and mobile applications, IoT, gaming, and scenarios requiring global distribution and 
+low-latency data access. It is recommended when high scalability, flexibility, and global availability are critical.
+
+=========================================================================================================================================================================
+
+How can you migrate data from an existing database to Azure Cosmos DB, and what considerations should be taken into account during the migration process?
+Data migration to Azure Cosmos DB can be performed using tools like Azure Data Factory or Data Migration Tool. 
+Considerations include schema mapping, data consistency, and optimizing for Cosmos DB's data model.
+=========================================================================================================================================================================
+
+What tools and SDKs are available for developers to interact with Azure Cosmos DB?
+Azure Portal, Visual Studio, and Azure CLI are tools for management. SDKs in various programming languages (e.g., .NET, Java, Python) 
+facilitate application development, providing programmatic access to Cosmos DB.
+=========================================================================================================================================================================
+
+Describe the monitoring and diagnostic features provided by Azure Cosmos DB.
+Azure Cosmos DB offers detailed monitoring through Azure Monitor and Azure Log Analytics, providing insights into performance 
+metrics, resource utilization, and query performance.
+=========================================================================================================================================================================
+
+Can you discuss scenarios where you might choose a specific API (e.g., SQL, MongoDB, Gremlin) in Azure Cosmos DB based on application requirements?
+API selection in Azure Cosmos DB depends on the desired data model and compatibility with existing applications. 
+For example, SQL API for document data, MongoDB API for MongoDB-compatible data, and Gremlin API for graph data.
+=========================================================================================================================================================================
+
+Explain how partition keys are chosen in Azure Cosmos DB and their impact on performance.
+Choosing an appropriate partition key is crucial for Azure Cosmos DB performance. It affects scalability, query performance, 
+and data distribution. An ideal partition key evenly distributes data and avoids hotspots.
+=========================================================================================================================================================================
+
+What are the best practices for optimizing query performance in Azure Cosmos DB?
+Best practices include designing efficient partition keys, optimizing indexing, using appropriate consistency models, 
+and avoiding unnecessary data retrieval to enhance query performance in Azure Cosmos DB.
+=========================================================================================================================================================================
+
+How can you ensure high availability and disaster recovery in Azure Cosmos DB?
+High availability is achieved through multi-region replication and automatic failover in Azure Cosmos DB. 
+Disaster recovery is ensured by maintaining multiple copies of data in different regions to withstand regional outages.
+=========================================================================================================================================================================
+
