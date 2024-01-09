@@ -1,0 +1,48 @@
+Locking
+
+- locking is a mechanism which is used to consistency as well as concurrency 
+- ⁠to control the transaction 
+
+Types of locking
+1) shared lock - symbol is S 
+- Another transaction that tries to read the same data is permitted to read, but a transaction that tries to update the data will be prevented from doing so until the shared lock is released
+2) Exclusive lock - symbol is X
+- when we want to do insert update delete then it that cases this will apply exclusive lock. 
+- ⁠only one user is allowed to work on this and others cannot do any operation.
+3) update lock 
+- first will apply the shared lock and once the data is being modified then it will be applied to exclusive lock this is called update lock. 
+4) schema lock 
+- whenever we can’t to change or modify the structure of the table then this is being applied and hence called as schema lock.
+
+Dirty reads
+When a transaction is allowed to read a row that has been modified by another transaction that is not been committed yet that time Dirty Reads occurred.
+
+Non reputable read
+occurs when a transaction reads the same row twice but gets different data each time.
+
+Phantom read
+occurs when a transaction retrieves a set of rows twice and new rows are inserted into or removed from that set by another transaction that is committed in between.
+
+The above all issues(reads) can be solved by setting proper isolation setting.
+
+
+Isolation
+
+Isolation levels
+1) read uncommitted 
+- transactions are not required to lock rows before reading or writing data. 
+- ⁠n number of people can connect and read but at this situation only bad data is being seen.
+- ⁠this is the default isolation level
+2) read committed 
+- can be able to see only committed data. 
+- ⁠only when the transaction is being committed then only the data will be able to read and there is no dirty data here 
+- ⁠This is the default isolation level in sql server.
+3) Repeatable read
+- In this isolation level the database server locks all rows examined (not just fetched) for the duration of the transaction.
+4) Serialiser 
+- If the SQL target type is VARCHAR or CHAR, the result is serialized in the encoding that corresponds to the database's collation code page without a byte order mark or XML declaration.
+5) Snapshot 
+- specifies that data read within a transaction will never reflect changes made by other simultaneous transactions
+- ⁠performance will be slow here 
+
+Note: read committed is the default isolation level
