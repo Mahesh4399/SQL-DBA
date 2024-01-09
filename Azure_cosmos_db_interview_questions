@@ -1,6 +1,7 @@
 What is Azure Cosmos DB, and how does it differ from traditional relational databases?
 Azure Cosmos DB is a globally distributed, multi-model database service designed for modern applications.
-It differs by offering automatic scaling, multi-region distribution, and support for various data models compared to traditional relational databases.
+It differs by offering automatic scaling, multi-region distribution, and support for various data models 
+compared to traditional relational databases.
 =========================================================================================================================================================================
 
 Explain the multi-model capabilities of Azure Cosmos DB.
@@ -15,7 +16,8 @@ access and fault tolerance, enhancing application performance and availability.
 
 Can you describe the various consistency models available in Azure Cosmos DB and when you might use each one?
 Azure Cosmos DB offers strong, bounded staleness, session, and eventual consistency models. Selection depends on factors 
-like the application's data consistency requirements, with strong consistency for critical transactions and eventual consistency for read-heavy workloads.
+like the application's data consistency requirements, with strong consistency for critical transactions and eventual 
+consistency for read-heavy workloads.
 =========================================================================================================================================================================
 
 What are the key differences between SQL (DocumentDB) API, MongoDB API, Gremlin API, and Table API in Azure Cosmos DB?
@@ -34,7 +36,8 @@ It's significant for efficient data distribution and parallel processing, ensuri
 =========================================================================================================================================================================
 
 What is the purpose of the Azure Cosmos DB emulator, and how can it be useful in the development and testing process?
-The Azure Cosmos DB emulator is a local development environment that mimics the Azure Cosmos DB service. It's useful for developing and testing applications without incurring Azure costs, providing a simulated Cosmos DB environment.
+The Azure Cosmos DB emulator is a local development environment that mimics the Azure Cosmos DB service. 
+It's useful for developing and testing applications without incurring Azure costs, providing a simulated Cosmos DB environment.
 =========================================================================================================================================================================
 
 What are the security features available in Azure Cosmos DB to protect data?
@@ -63,7 +66,8 @@ low-latency data access. It is recommended when high scalability, flexibility, a
 
 =========================================================================================================================================================================
 
-How can you migrate data from an existing database to Azure Cosmos DB, and what considerations should be taken into account during the migration process?
+How can you migrate data from an existing database to Azure Cosmos DB, and what considerations should be taken 
+into account during the migration process?
 Data migration to Azure Cosmos DB can be performed using tools like Azure Data Factory or Data Migration Tool. 
 Considerations include schema mapping, data consistency, and optimizing for Cosmos DB's data model.
 =========================================================================================================================================================================
