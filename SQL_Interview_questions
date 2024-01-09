@@ -23,13 +23,178 @@ SQL server architectre
 
 We can create n number of .mdf and .ldf files but we only 1 .mdf file will be used and multiple .ldf files can we used
 ===============================================================================================================================================
-2.	What are the Pre installation steps that you will take care?
+2.	What are the Pre installation steps that you will take care? (https://infocenter.informationbuilders.com/wf80/index.jsp?topic=%2Fpubdocs%2FInstalls%2FWindows%2Fsource%2Ftopic62.htm)
+
+Review System Requirements
+Check Operating System Compatibility
+Plan Disk Storage
+Network Configuration
+Account Permissions
+Windows Firewall Configuration
+Service Accounts
+Collation Settings
+Backup
+======================================================================================================================================================================================
+SQL Server Edition and Features
+Review System Requirements:
+Ensure that the hardware and software requirements for the version of SQL Server you plan to install are met. Check Microsoft's official documentation for the specific version you are installing.
+
+Check Operating System Compatibility:
+Verify that the chosen operating system is compatible with the version of SQL Server you are installing. Make sure to install the latest service packs and updates.
+
+Plan Disk Storage:
+Plan and configure disk storage for the SQL Server installation. Different components like the operating system, SQL Server binaries, system databases, and user databases may reside on separate disks for optimal performance.
+
+Network Configuration:
+Ensure that the server has a static IP address and a valid hostname. Configure the network settings to allow communication between SQL Server instances if you're working in a multi-server environment.
+
+Account Permissions:
+Ensure that the user account under which you are installing SQL Server has the necessary administrative privileges on the server. This includes being a member of the local administrators group.
+
+Windows Firewall Configuration:
+Adjust Windows Firewall settings to allow communication on the necessary ports for SQL Server. The default port for SQL Server is 1433, but it can be configured differently during installation.
+
+Service Accounts:
+Plan and configure service accounts for SQL Server services. It's a good practice to use separate service accounts for SQL Server services to enhance security.
+
+Collation Settings:
+Choose the appropriate collation settings for your database. This includes deciding on the sort order and case sensitivity.
+
+Backup:
+Perform a backup of critical system databases and data, especially if you're upgrading from an older version of SQL Server.
+SQL Server Edition and Features:
+==========================================================================================================================================================================
+
 3.	What are the post installation steps that you will take care?
+Apply Service Packs and Cumulative Updates
+Configure Database Mail
+Enable Instant File Initialization (IFI)
+Configure TempDB
+Set Maximum Server Memory
+Configure Backup Strategy
+Implement Security Best Practices
+Enable Auditing
+Monitor and Tune Performance
+Configure Maintenance Plans
+Review Error Logs
+Set up High Availability and Disaster Recovery
+Enable SSL Encryption
+Documentation
+Update Statistics
+=====================================================================================================================================================================
 4.	What are the versions and editions of SQL server?
-5.	Storage architecture?
-6.	GAM and SGAM
+SQL Server 2000
+SQL Server 2005
+SQL Server 2008
+SQL Server 2008 R2
+SQL Server 2012
+SQL Server 2014
+SQL Server 2016
+SQL Server 2017
+SQL Server 2019
+
+Editions
+Enterprise Edition
+Standard Edition
+Web Edition
+Developer Edition
+Express Edition
+Azure SQL Database
+============================================================================================================================================================================
+5.Pages and type of pages?
+Index page (indexes)
+IAM (Indexes allocation map -indexes information will be stored)
+Data page (data will be stored)
+BCM (Bulk change map - Bulk data - Bulk log recovery model info)
+DCM (Differential change map - modification done from last backup to till now)
+GAM (Global allocation map - if extents are uniform then this - size is 4 GB - 1 extent is 64kb - 8 pages is 1 extent)
+SGAM (shared global allocation map - mixed extents are high then this is used - opp to GAM)
+Page free space(8kb) - if the space avaliability is free in the page then that get stored in this
+Text or Image page - Text or image type of data wil be stored in this page 
+==========================================================================================================================================================================
+
 7.	Extent and types?
-8.	What are pages and types of pages?
+Extent
+Uniform Extent:
+Mixed Extent
+IAM Page (Index Allocation Map):
+SGAM Page (Shared Global Allocation Map):
+PGAM Page (Page Global Allocation Map)
+==========================================================================================================================================================================
+
 9.	Explain about system databases?
+
+Master Database:
+Central control database.
+Stores system-level information.
+Records configuration settings and metadata.
+
+Model Database:
+Serves as a template for new databases.
+Changes to the model database apply to new databases.
+
+MSDB Database:
+Supports SQL Server Agent and maintenance tasks.
+Stores backup and restore information.
+Manages SQL Server Agent jobs, alerts, and operators.
+
+TempDB Database:
+Used for temporary storage.
+Recreated on SQL Server restart.
+Supports various operations like sorting and grouping.
+=======================================================================================================================================================================
 10.	Recovery models?
+
+Full Recovery Model:
+Point-in-Time Recovery: Full recovery model allows for point-in-time recovery, enabling restoration to a specific point in time, which is essential for data consistency and avoiding data loss.
+Regular Transaction Log Backups: It requires regular transaction log backups to prevent the log file from growing excessively and to maintain the ability for point-in-time recovery.
+
+Simple Recovery Model:
+Minimal Logging: Simple recovery model minimally logs information for recovery, making it suitable for databases where point-in-time recovery is not crucial.
+Automatic Log Truncation: The transaction log is automatically truncated at checkpoints, reducing the need for manual management of transaction log backups compared to the full recovery model.
+
+Bulk-Logged Recovery Model:
+Minimized Logging for Bulk Operations: Bulk-Logged recovery model minimally logs bulk operations, reducing log space usage for operations like SELECT INTO, BULK INSERT, or CREATE INDEX.
+Risk of Incomplete Recovery: In the event of a media failure, restoring from backups in this model might lead to incomplete recovery for bulk operations performed since the last backup.
+==============================================================================================================================================================================
 11.	Backup and types of backups?
+
+Types of Backups:
+
+Full Backup:
+Captures the entire database, including all data and objects.
+Provides a baseline for other backups.
+Typically performed on a regular schedule.
+
+Differential Backup:
+Captures changes made since the last full backup.
+Reduces the time needed for data recovery compared to a full backup.
+Useful for large databases with infrequent full backups.
+
+Transaction Log Backup:
+Captures transaction log records since the last log backup.
+Allows for point-in-time recovery.
+Essential for databases using the full or bulk-logged recovery model.
+
+Copy-Only Backup:
+Independent of the regular backup sequence.
+Does not affect the differential backup chain.
+Useful for creating ad-hoc backups without disrupting the existing backup strategy.
+
+File and Filegroup Backup:
+Allows backing up specific files or filegroups within a database.
+Useful for large databases when specific portions need backup.
+
+Partial Backup:
+Backs up only the read-write filegroups and the primary filegroup.
+Suitable for databases with read-only or read-write filegroups.
+
+Mirror Backup:
+Creates a backup on multiple backup devices simultaneously.
+Provides redundancy and ensures backup availability.
+
+Tail-Log Backup:
+Captures the transaction log records from the active log to a point of failure.
+Performed before restoring a database to a point of failure
+=========================================================================================================================================================================================
+
