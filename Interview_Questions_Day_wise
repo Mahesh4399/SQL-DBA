@@ -1,0 +1,36 @@
+Day-1 (SQL DBA Classes interview Questions)
+
+1) 1. What is index and explanation types of indexes.
+Solution:
+Clustered Index 
+Non-Clustered Index 
+ColumnStore Index 
+Filtered Index 
+Hash Index 
+Unique Index 
+
+* Clustered Index - Clustered indexes sort and store the data rows in the table or view based on their key values.
+* Non-Clustered Index -Nonclustered indexes have a structure separate from the data rows. A nonclustered index contains the nonclustered 
+index key values and each key value entry has a pointer to the data row that contains the key value.
+* Column Store Index -Columnstore indexes are the standard for storing and querying large data warehousing fact tables. 
+* Filtered Index - A filtered index is an optimized disk-based rowstore nonclustered index especially suited to cover queries that select from a well-defined subset of data.
+* Hash Index - Hash Index is one of the types of indexes in SQL server that slots containing a pointer or an array of N buckets and a row on each slot or bucket.
+* Unique Index - A unique index guarantees that the index key contains no duplicate values and therefore every row in the table is in some way unique.
+
+2) What is column store index and covering index in SQL server?
+Solution:
+Columnstore Index - A covering index is a regular index that provides all the data required for a query without having to access the actual table.
+Covering index - A covering index is a regular index that provides all the data required for a query without having to access the actual table. 
+
+3) What is table scan,index scan and index seek?
+Solution:
+Table scan: A table scan is the reading of every row in a table and is caused by queries that don't properly use indexes.
+Index Scan & Index seek: Index scan means it retrieves all the rows from the table and index seek means it retrieves selective rows from the table.
+
+4) Explain what is key look up and how to fix it?
+Solution:
+A key lookup occurs when the query optimizer chooses a table using an index seek to retrieve one set of columns for the result set,
+but not all of them. 
+* To fix the key lookup, we can create a new index with required columns as the included column on the Index.
+
+
